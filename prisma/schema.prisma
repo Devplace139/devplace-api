@@ -29,24 +29,26 @@ model Specialty {
 }
 
 model Doctor {
-  id        String   @id @default(uuid())
-  name      String
-  crm       String   @unique
-  phone     String
-  email     String
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
+  id         String       @id @default(uuid())
+  name       String
+  crm        String       @unique
+  phone      String
+  email      String
+  createdAt  DateTime     @default(now()) @map("created_at")
+  updatedAt  DateTime     @updatedAt @map("updated_at")
+  FillDoctor FillDoctor[]
 
   @@map("doctors")
 }
 
 model Clinic {
-  id        String   @id @default(uuid())
-  name      String
-  address   String
-  phone     String
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
+  id         String       @id @default(uuid())
+  name       String
+  address    String
+  phone      String
+  createdAt  DateTime     @default(now()) @map("created_at")
+  updatedAt  DateTime     @updatedAt @map("updated_at")
+  FillDoctor FillDoctor[]
 
   @@map("clinics")
 }
@@ -63,4 +65,19 @@ model Patient {
   updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("patients")
+}
+
+model FillDoctor {
+  id String @id @default(uuid())
+
+  doctor   Doctor @relation(fields: [doctorId], references: [id])
+  doctorId String
+
+  clinic   Clinic @relation(fields: [clinicId], references: [id])
+  clinicId String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("filldoctors")
 }
