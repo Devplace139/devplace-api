@@ -1,0 +1,145 @@
+@baseUrl = http://localhost:3333/api/v1
+
+# @name create_specialty
+POST {{baseUrl}}/specialtys
+Content-Type: application/json
+
+{
+  "name": "teste",
+  "description": "atualizar e excluir"
+}
+
+###
+
+# @name select_all_specialty
+GET {{baseUrl}}/specialtys
+Content-Type: application/json
+
+###
+
+# @name find_by_id_specialty
+GET {{baseUrl}}/specialtys/3c34ace1-733a-40a4-8ee8-22a85bd2f417
+Content-Type: application/json
+
+###
+
+# @name update_specialty
+PUT {{baseUrl}}/specialtys/9bea1daa-1fbc-4149-a879-dd5fd210291d
+Content-Type: application/json
+
+{
+  "name": "teste atualizado",
+  "description": "atualizar e excluir"
+}
+
+###
+
+# @name delete_specialtys
+DELETE {{baseUrl}}/specialtys/9bea1daa-1fbc-4149-a879-dd5fd210291d
+Content-Type: application/json
+
+###
+
+# @name find_by_name_specialty
+GET {{baseUrl}}/specialtys?name=ortopedia
+Content-Type: application/json
+
+###
+
+# @name create_doctor
+POST {{baseUrl}}/doctors
+Content-Type: application/json
+
+{
+  "name": "para excluir",
+  "crm": "4561",
+  "phone": "987654331",
+  "email": "maria@maria.com"
+}
+
+###
+
+# @name select_all_doctor
+GET {{baseUrl}}/doctors
+Content-Type: application/json
+
+###
+
+# @name find_by_id_doctor
+GET {{baseUrl}}/doctors/adddb3d4-9b97-4198-b8df-76563ddba6eb
+Content-Type: application/json
+
+###
+
+# @name find_by_crm_doctor
+GET {{baseUrl}}/doctors?crm=456
+Content-Type: application/json
+
+###
+
+# @name update_specialty
+PUT {{baseUrl}}/doctors/dc6d1381-1608-43d2-895f-4467c26a2cf9
+Content-Type: application/json
+
+{
+  "name": "maria eduarda",
+  "crm": "456",
+  "phone": "8888888",
+  "email": "mariaeduarda@maria.com"
+}
+
+###
+
+# @name delete_specialtys
+DELETE {{baseUrl}}/doctors/91500b38-9b69-4bf5-8b56-91b60418e2db
+Content-Type: application/json
+
+###
+
+# @name create_clinic
+POST {{baseUrl}}/clinics
+Content-Type: application/json
+
+{
+  "name": "clinica para atualizar e excluir",
+  "address": "rua 4",
+  "phone": "987654331"
+}
+
+###
+
+# @name select_all_clinics
+GET {{baseUrl}}/clinics
+Content-Type: application/json
+
+###
+
+# @name find_by_id_clinic
+GET {{baseUrl}}/clinics/af785097-8f66-47c0-b264-09d6aa726db6
+Content-Type: application/json
+
+###
+
+# @name update_clinic
+PUT {{baseUrl}}/clinics/ead93d60-ec30-4bc8-85c9-fe2a40ce21a3
+Content-Type: application/json
+
+{
+  "name": "atualizado",
+  "crm": "456",
+  "phone": "8888888",
+  "email": "mariaeduarda@maria.com"
+}
+
+###
+
+# @name delete_clinic
+DELETE {{baseUrl}}/clinics/ead93d60-ec30-4bc8-85c9-fe2a40ce21a3
+Content-Type: application/json
+
+###
+
+
+
+
+
