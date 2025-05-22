@@ -24,6 +24,7 @@ export class ClinicsService {
     return clinic
   }
 
+  // cria especialidades
   async create(createClinicDto: CreateClinicDto): Promise<Clinic> {
     const existingClinic: Clinic | null =
       await this.clinicsRepository.findByName(createClinicDto.name)
